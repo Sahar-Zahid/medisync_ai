@@ -1,0 +1,89 @@
+.patient-profile-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 560px;
+}
+
+.patient-profile-page h1 {
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+}
+
+.profile-load-error {
+  margin-top: var(--space-2);
+}
+
+.profile-card {
+  margin-top: var(--space-2);
+  gap: var(--space-3);
+}
+
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.profile-field:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.profile-field-readonly {
+  opacity: 0.75;
+}
+
+.profile-field-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.profile-field-value {
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.profile-field-value-capitalize {
+  text-transform: capitalize;
+}
+
+.profile-edit-btn {
+  align-self: flex-start;
+  margin-top: var(--space-1);
+}
+
+.profile-edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-edit-form .form-field {
+  margin-bottom: var(--space-2);
+}
+
+.profile-edit-actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.profile-status {
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+}
+
+.profile-status-success {
+  background: var(--color-primary-tint);
+  color: var(--color-primary-dark);
+}
+
+.profile-status-error {
+  background: rgba(201, 75, 63, 0.1);
+  color: #c94b3f;
+}

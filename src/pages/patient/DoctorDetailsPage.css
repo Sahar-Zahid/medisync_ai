@@ -1,0 +1,85 @@
+.doctor-details-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 560px;
+}
+
+.doctor-details-page h1 {
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+}
+
+.doctor-details-back {
+  align-self: flex-start;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.doctor-details-back:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+.doctor-details-error {
+  margin-top: var(--space-2);
+}
+
+.doctor-details-card {
+  margin-top: var(--space-2);
+  gap: var(--space-3);
+}
+
+.doctor-details-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.doctor-details-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+}
+
+.doctor-details-name {
+  font-size: 1.15rem;
+  overflow-wrap: anywhere;
+}
+
+.doctor-details-role {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+}
+
+/* Same label + value stack pattern as the patient profile card, kept
+   under this page's own class names (not .profile-field) since these
+   are plain global stylesheets, not scoped modules — reusing the exact
+   .profile-field name here would silently collide with ProfilePage.css. */
+.doctor-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.doctor-field-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.doctor-field-value {
+  font-size: 1rem;
+  color: var(--color-text);
+}

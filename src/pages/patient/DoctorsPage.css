@@ -1,0 +1,85 @@
+.doctors-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.doctors-page h1 {
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+}
+
+.doctors-search {
+  max-width: 360px;
+  margin-top: var(--space-1);
+}
+
+.doctors-load-error,
+.doctors-empty-state {
+  margin-top: var(--space-2);
+}
+
+.doctors-empty-state {
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.doctors-grid {
+  margin-top: var(--space-2);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-3);
+}
+
+.doctor-card {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: unset;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.doctor-card:hover,
+.doctor-card:focus-visible {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-tint);
+}
+
+.doctor-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+}
+
+.doctor-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.doctor-card-name {
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.doctor-card-role {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+}
+
+@media (max-width: 480px) {
+  .doctors-search {
+    max-width: 100%;
+  }
+}

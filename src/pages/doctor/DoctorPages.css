@@ -1,0 +1,435 @@
+/* Doctor dashboard pages */
+
+.doctor-page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.doctor-page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Loading state */
+.doctor-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: #6b7280;
+}
+
+.doctor-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #0E6E5C;
+  border-radius: 50%;
+  animation: doctor-spin 0.8s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes doctor-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error state */
+.doctor-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.doctor-error-message {
+  color: #991b1b;
+  margin: 0 0 1rem 0;
+}
+
+.doctor-retry-button {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.doctor-retry-button:hover {
+  background: #b91c1c;
+}
+
+/* Empty state */
+.doctor-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #f9fafb;
+  border-radius: 0.75rem;
+  border: 1px dashed #d1d5db;
+}
+
+.doctor-empty-icon {
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+.doctor-empty-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 0.5rem 0;
+}
+
+.doctor-empty-message {
+  color: #6b7280;
+  margin: 0;
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Patient roster */
+.doctor-roster {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Patient card */
+.doctor-patient-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.doctor-patient-card:hover {
+  border-color: #0E6E5C;
+  box-shadow: 0 2px 8px rgba(14, 110, 92, 0.1);
+}
+
+.doctor-patient-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.doctor-patient-avatar {
+  width: 48px;
+  height: 48px;
+  background: #f0fdf4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0E6E5C;
+}
+
+.doctor-patient-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.doctor-patient-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.doctor-patient-status {
+  font-size: 0.875rem;
+  color: #059669;
+}
+
+.doctor-patient-action {
+  background: #0E6E5C;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.doctor-patient-action:hover {
+  background: #0a5a4a;
+}
+
+/* Page header with back link */
+.doctor-page-header {
+  margin-bottom: 1.5rem;
+}
+
+.doctor-back-link {
+  display: inline-block;
+  color: #0E6E5C;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s;
+}
+
+.doctor-back-link:hover {
+  color: #0a5a4a;
+}
+
+/* Unauthorized error */
+.doctor-error-unauthorized {
+  background: #fef3c7;
+  border-color: #fcd34d;
+}
+
+.doctor-error-unauthorized .doctor-error-message {
+  color: #92400e;
+}
+
+/* Reports list */
+.doctor-reports-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Report card */
+.doctor-report-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+}
+
+.doctor-report-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.doctor-report-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.doctor-report-filename {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.doctor-report-status {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+}
+
+.doctor-report-status-uploaded {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.doctor-report-status-processing {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.doctor-report-status-completed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.doctor-report-status-failed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.doctor-report-actions {
+  flex-shrink: 0;
+}
+
+.doctor-view-pdf-button {
+  background: #374151;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.doctor-view-pdf-button:hover {
+  background: #1f2937;
+}
+
+.doctor-report-meta {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+/* Extraction section */
+.doctor-extraction-section {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.doctor-extraction-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.doctor-extraction-header h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+
+.doctor-extraction-status {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.doctor-extraction-status-completed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.doctor-extraction-status-failed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Pending notice */
+.doctor-pending-notice {
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  color: #92400e;
+}
+
+/* Results table */
+.doctor-results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.doctor-results-table th {
+  text-align: left;
+  padding: 0.5rem;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  font-weight: 600;
+  color: #374151;
+}
+
+.doctor-results-table td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #f3f4f6;
+  color: #1a1a2e;
+}
+
+.doctor-abnormality {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+}
+
+.doctor-abnormality-normal {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.doctor-abnormality-low {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.doctor-abnormality-high {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.doctor-abnormality-unresolved,
+.doctor-abnormality-not_applicable {
+  background: #e5e7eb;
+  color: #6b7280;
+}
+
+.doctor-no-results,
+.doctor-extraction-error,
+.doctor-no-extraction {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .doctor-patient-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .doctor-patient-action {
+    width: 100%;
+    text-align: center;
+  }
+
+  .doctor-report-header {
+    flex-direction: column;
+  }
+
+  .doctor-results-table {
+    font-size: 0.75rem;
+  }
+
+  .doctor-results-table th,
+  .doctor-results-table td {
+    padding: 0.375rem;
+  }
+}
+
+/* Triage view: evidence column is long free text — clip it and let
+   the browser tooltip (title attr) show the full source text. */
+.doctor-triage-evidence {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

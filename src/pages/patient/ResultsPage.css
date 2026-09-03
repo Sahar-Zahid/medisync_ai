@@ -1,0 +1,234 @@
+.results-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.results-page h1 {
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+}
+
+.results-load-error,
+.results-empty-state {
+  margin-top: var(--space-2);
+}
+
+.results-empty-state {
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.results-list-heading {
+  margin: var(--space-3) 0 0;
+  font-size: 1.05rem;
+}
+
+.results-list {
+  margin-top: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* --- AI Summary card --- */
+
+.ai-summary-card {
+  margin-top: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  border: 1px solid var(--color-border);
+}
+
+.ai-summary-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.ai-summary-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+}
+
+.ai-summary-title {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.ai-summary-title h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.ai-summary-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+}
+
+.ai-summary-refresh {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  cursor: pointer;
+}
+
+.ai-summary-refresh:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.ai-summary-scope {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+}
+
+.ai-summary-observations {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.ai-summary-observations li {
+  font-size: 0.95rem;
+}
+
+.ai-summary-disclaimer {
+  margin: 0;
+  padding-top: var(--space-1);
+  border-top: 1px dashed var(--color-border);
+  font-size: 0.78rem;
+  color: var(--color-text-soft);
+}
+
+.ai-summary-error {
+  margin: 0;
+}
+
+.ai-summary-empty {
+  margin: 0;
+}
+
+.result-card {
+  min-height: unset;
+}
+
+.result-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.result-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+}
+
+.result-card-title {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.result-card-title h2 {
+  margin: 0;
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.result-status-badge,
+.result-abnormality-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.result-status-verified {
+  background: var(--color-verified-tint);
+  color: var(--color-verified);
+}
+
+.result-status-corrected {
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+}
+
+.result-abnormality-badge {
+  background: #eef2f1;
+  color: var(--color-text-soft);
+}
+
+.result-abnormality-high,
+.result-abnormality-low,
+.result-abnormality-critical {
+  background: #fdecea;
+  color: #b3261e;
+}
+
+.result-abnormality-normal {
+  background: #e6f4ea;
+  color: #1a7f37;
+}
+
+.result-card-details {
+  margin: var(--space-1) 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+}
+
+.result-card-details dt {
+  font-size: 0.72rem;
+  color: var(--color-text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.result-card-details dd {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 480px) {
+  .result-card-details {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+}

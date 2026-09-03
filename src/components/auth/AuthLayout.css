@@ -1,0 +1,160 @@
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+/* ---------- Left brand panel ---------- */
+
+.auth-brand {
+  position: relative;
+  background: var(--color-primary);
+  background-image: radial-gradient(circle at 12% 15%, rgba(255, 255, 255, 0.1), transparent 45%),
+    radial-gradient(circle at 88% 90%, rgba(255, 255, 255, 0.08), transparent 45%);
+  color: #ffffff;
+  padding: var(--space-5) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.auth-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: fit-content;
+}
+
+.auth-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.auth-brand-text {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.auth-brand-message {
+  max-width: 360px;
+  font-size: 1.08rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.auth-brand-visual {
+  margin-top: var(--space-3);
+}
+
+.av-card {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-3);
+  max-width: 260px;
+}
+
+.av-card-header {
+  display: flex;
+  gap: 6px;
+  margin-bottom: var(--space-2);
+}
+
+.av-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-border);
+}
+
+.av-line {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--color-bg-alt);
+  margin-bottom: 8px;
+}
+
+.av-line-w80 {
+  width: 80%;
+}
+.av-line-w60 {
+  width: 60%;
+}
+.av-line-w70 {
+  width: 70%;
+}
+
+.av-badge {
+  margin-top: var(--space-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-verified-tint);
+  color: var(--color-verified);
+  border-radius: 999px;
+  padding: 5px 10px 5px 5px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.av-badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-verified);
+}
+
+/* ---------- Right form panel ---------- */
+
+.auth-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5) var(--space-4);
+  background: var(--color-bg);
+}
+
+.auth-panel-inner {
+  width: 100%;
+  max-width: 420px;
+}
+
+@media (max-width: 940px) {
+  .auth-page {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-brand {
+    padding: var(--space-5) var(--space-4) var(--space-4);
+  }
+
+  .auth-brand-visual {
+    display: none;
+  }
+
+  .auth-brand-message {
+    max-width: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .auth-brand {
+    padding: var(--space-4);
+    gap: var(--space-2);
+  }
+
+  .auth-panel {
+    padding: var(--space-4) var(--space-3) var(--space-5);
+  }
+}

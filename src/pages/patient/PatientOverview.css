@@ -1,0 +1,112 @@
+.patient-overview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.patient-overview-intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  max-width: 640px;
+}
+
+.patient-overview-intro h1 {
+  font-size: clamp(1.6rem, 1.3rem + 1vw, 2.1rem);
+}
+
+.patient-overview-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.patient-overview-summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-3);
+}
+
+.patient-overview-summary-value {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.patient-overview-summary-label {
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+}
+
+.patient-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.patient-overview-quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.patient-overview-quick-actions-title {
+  font-size: 1.05rem;
+}
+
+.patient-overview-quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-2);
+}
+
+.patient-overview-quick-action {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.patient-overview-quick-action:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+.patient-overview-quick-action svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+@media (max-width: 760px) {
+  .patient-overview-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-overview-quick-actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .patient-overview-quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+}
