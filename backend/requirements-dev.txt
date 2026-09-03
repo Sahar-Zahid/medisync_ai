@@ -1,0 +1,5 @@
+-r requirements.txt
+
+# Testing only — not needed to run the application itself.
+pytest
+httpx

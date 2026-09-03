@@ -1,0 +1,44 @@
+fastapi
+uvicorn[standard]
+pydantic
+email-validator
+sqlalchemy>=2.0
+psycopg[binary]
+alembic
+argon2-cffi
+pyjwt
+python-multipart
+pypdf
+
+# Loads backend/.env (see app.core.config) — imported unconditionally at
+# app.core.config module load time, so the app cannot start without this
+# installed. Runtime-readiness audit finding: this was missing from the
+# pin list even though app/core/config.py does `from dotenv import
+# load_dotenv` at import time; added as the one minimal fix required to
+# make the backend importable at all.
+python-dotenv
+
+# OCR fallback for image-only/scanned PDFs (see
+# app.services.ocr_extraction_service). pypdfium2 renders PDF pages to
+# images locally (no poppler/system dependency beyond its bundled
+# binary); pytesseract is a thin wrapper that shells out to a local
+# Tesseract OCR install. Tesseract itself (the `tesseract` binary/
+# package) must be present on the host — it is a system package, not a
+# pip package, so it isn't listed here.
+pypdfium2
+pytesseract
+
+# Official Gemini SDK, used only by app.services.gemini_extraction_service
+# for schema-locked candidate lab-result extraction. Not installed in this
+# environment (no network/package installation available here) — pinned
+# to a specific version rather than installed. The pin was chosen to
+# match the unified google-genai client API already used in
+# gemini_extraction_service.py (genai.Client(...), client.models.
+# generate_content(..., config=types.GenerateContentConfig(
+# system_instruction=..., response_mime_type=..., response_schema=...,
+# temperature=...))) — that call shape is the stable, documented
+# structured-output API for this SDK generation. This pin could NOT be
+# confirmed by actually installing/importing the package in this
+# environment; confirm it resolves and the API still matches before
+# deploying, and adjust the pin if not.
+google-genai==1.20.0
