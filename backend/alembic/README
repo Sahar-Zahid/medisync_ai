@@ -1,0 +1,26 @@
+Generic single-database configuration for MediSync, using SQLAlchemy 2.x
+models and PostgreSQL.
+
+Setup
+-----
+Requires DATABASE_URL to be set (see backend/.env.example). The connection
+string always comes from that environment variable — it is never hardcoded
+in alembic.ini or env.py.
+
+Common commands (run from the backend/ directory)
+--------------------------------------------------
+Apply all migrations:
+    alembic upgrade head
+
+Roll back the most recent migration:
+    alembic downgrade -1
+
+Generate a new migration from model changes (after adding/editing a model
+and importing it in alembic/env.py):
+    alembic revision --autogenerate -m "description"
+
+Check current DB revision:
+    alembic current
+
+View migration history:
+    alembic history
